@@ -2,34 +2,12 @@
 
 #
 
-![alt text](logos.png)
-
 # Automated API Service
 
 ## Overview
 
 ### Purpose:
 API common service to handle API related functionality
-
-## Authors
-
-- **Santhosh Thomas** - Development of asset
-- **Sharath Gosavi** - typescript conversion
-
-
-## Copyright
-
-THIS PROGRAM IS CONFIDENTIAL AND PROPRIETARY TO IBM CORP AND MAY NOT
-BE REPRODUCED PUBLISHED OR DISCLOSED TO OTHERS WITHOUT ITS AUTHORIZATION.
-
-Copyright &copy; 2021. IBM Corporation.
-All Rights Reserved. IBM is a trademark or registered trademarks of
-IBM Corporation or its affiliates in the U.S. and other countries. Other
-names may be trademarks of their respective owners.
-
-## Acknowledgments
-
-- Sumabala Nair 
 
 ## Steps to follow
 ### DB creation
