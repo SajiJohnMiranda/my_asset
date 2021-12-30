@@ -43,6 +43,24 @@ CREATE TABLE public.select_query_metadata (
 	CONSTRAINT select_query_metadata_pk PRIMARY KEY (query_id)
 );
 
+
+drop function if exists generic_select;
+
+CREATE OR REPLACE FUNCTION generic_select(query_id text,paramarray text[])
+  RETURNS table (response json) 
+  LANGUAGE plpgsql AS
+$func$
+declare
+sqlQuery varchar;
+begin
+select select_query into sqlQuery from select_query_metadata sqm where sqm.query_id =$1; 
+   RETURN QUERY EXECUTE $$
+	  select json_agg(a) as response
+		from ($$ || sqlQuery || ') a '
+   USING  paramarray;
+END
+$func$;
+
 INSERT INTO public.select_query_metadata
 (query_id, select_query, comments_used_for)
 VALUES('DEMO_DATA', 'select * from demo', NULL);
